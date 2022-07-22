@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+    <title>Risco de Incêndios</title>
+</head>
+<body>
+
+
+<div style="max-width:37.5rem; display: flex; flex-direction:column; justify-content:center; align-items: center;padding:1rem;margin: auto;border:0.125rem solid grey;border-radius:0.625rem;box-shadow: 0.313rem 0.313rem #DCDCDC">
+
+    <a href="https://www.ipma.pt/pt/index.html" target="_blank"><img style="max-width:10rem;" src="{{ url_for('static',filename='images/download.png') }}" alt="Logo-IPMA"></a>
+
+    <div style="display: flex; flex-direction:column; justify-content:center; align-items: center;">
+        <p style="font-size: 1.5rem;font-family: 'Oswald', sans-serif;padding:0;margin-bottom:0;margin-top:0">RISCO DE INCÊNDIOS</p>
+        <p style="font-size: 1.2rem;font-family: 'Oswald', sans-serif;padding:0;margin-top:0">{{ dataprev }}</p>
+    </div>
+
+    <div>
+        <b><p style="font-family: 'Inter', sans-serif;text-align: center;font-size:1rem;
+        {% if risco_lisboa == 'Risco reduzido' %} color:#61D741; {% endif %}
+        {% if risco_lisboa == 'Risco moderado' %} color:#E4E143; {% endif %}
+        {% if risco_lisboa == 'Risco elevado' %} color:#FB9C31; {% endif %}
+        {% if risco_lisboa == 'Risco muito elevado' %} color:#E8511F; {% endif %}
+        {% if risco_lisboa == 'Risco máximo' %} color:#DA0303; {% endif %}">LISBOA</p></b>
+        <p style="font-family: 'Inter', sans-serif;text-align: center;font-size:0.8rem">{{ risco_lisboa }}</p>
+    </div>
+    <div>
+        <b><p style="font-family: 'Inter', sans-serif;text-align: center;font-size:1rem;
+        {% if risco_porto == 'Risco reduzido' %} color:#61D741; {% endif %}
+        {% if risco_porto == 'Risco moderado' %} color:#E4E143; {% endif %}
+        {% if risco_porto == 'Risco elevado' %} color:#FB9C31; {% endif %}
+        {% if risco_porto == 'Risco muito elevado' %} color:#E8511F; {% endif %}
+        {% if risco_porto == 'Risco máximo' %} color:#DA0303; {% endif %}">PORTO</p></b>
+        <p style="font-family: 'Inter', sans-serif;text-align: center;font-size:0.8rem">{{ risco_porto }}</p>
+    </div>
+    <div>
+        <b><p style="font-family: 'Inter', sans-serif;text-align: center;font-size:1rem;
+        {% if risco_coimbra == 'Risco reduzido' %} color:#61D741; {% endif %}
+        {% if risco_coimbra == 'Risco moderado' %} color:#E4E143; {% endif %}
+        {% if risco_coimbra == 'Risco elevado' %} color:#FB9C31; {% endif %}
+        {% if risco_coimbra == 'Risco muito elevado' %} color:#E8511F; {% endif %}
+        {% if risco_coimbra == 'Risco máximo' %} color:#DA0303; {% endif %}">COIMBRA</p></b>
+        <p style="font-family: 'Inter', sans-serif;text-align: center;font-size:0.8rem">{{ risco_coimbra }}</p>
+    </div>
+    <div>
+        <b><p style="font-family: 'Inter', sans-serif;text-align: center;font-size:1rem;
+        {% if risco_evora == 'Risco reduzido' %} color:#61D741; {% endif %}
+        {% if risco_evora == 'Risco moderado' %} color:#E4E143; {% endif %}
+        {% if risco_evora == 'Risco elevado' %} color:#FB9C31; {% endif %}
+        {% if risco_evora == 'Risco muito elevado' %} color:#E8511F; {% endif %}
+        {% if risco_evora == 'Risco máximo' %} color:#DA0303; {% endif %}">ÉVORA</p></b>
+        <p style="font-family: 'Inter', sans-serif;text-align: center;font-size:0.8rem">{{ risco_evora }}</p>
+    </div>
+    <div>
+        <b><p style="font-family: 'Inter', sans-serif;text-align: center;font-size:1rem;
+        {% if risco_evora == 'Risco reduzido' %} color:#61D741; {% endif %}
+        {% if risco_evora == 'Risco moderado' %} color:#E4E143; {% endif %}
+        {% if risco_evora == 'Risco elevado' %} color:#FB9C31; {% endif %}
+        {% if risco_evora == 'Risco muito elevado' %} color:#E8511F; {% endif %}
+        {% if risco_evora == 'Risco máximo' %} color:#DA0303; {% endif %}">FARO</p></b>
+        <p style="font-family: 'Inter', sans-serif;text-align: center;font-size:0.8rem">{{ risco_faro }}</p>
+    </div>
+
+
+    <p style="font-family: 'Inter', sans-serif;text-align: center;font-size: 0.5rem;color:grey">Todos os dados foram reunidos pelo IPMA e podem ser encontrados em http://api.ipma.pt/.</p>
+    <p style="font-family: 'Inter', sans-serif;text-align: center;font-size: 0.5rem;color:grey">Copyright © IPMA 2017 | ipma.pt</p>
+
+</div>
+
+</body>
+</html>
